@@ -15,10 +15,10 @@ export default EStyleSheet.create({
     borderRadius: BORDER_RADIUS,
     flexDirection: 'row',
     alignItems: 'center',
-    marginVertical: 11,
+    marginVertical: 11
   },
   containerDisabled: {
-    backgroundColor: '$lightGray',
+    backgroundColor: '$lightGray'
   },
   buttonContainer: {
     height: INPUT_HEIGHT,
@@ -26,24 +26,24 @@ export default EStyleSheet.create({
     justifyContent: 'center',
     backgroundColor: '$white',
     borderTopLeftRadius: BORDER_RADIUS,
-    borderBottomLeftRadius: BORDER_RADIUS,
+    borderBottomLeftRadius: BORDER_RADIUS
   },
   buttonText: {
     fontWeight: '600',
     fontSize: 20,
     paddingHorizontal: 16,
-    color: '$primaryBlue',
+    color: '$primaryBlue'
   },
   input: {
     height: INPUT_HEIGHT,
     flex: 1, // Takes up all space left-over after creating button
     fontSize: 18,
     paddingHorizontal: 8,
-    color: '$inputText',
+    color: '$inputText'
   },
   border: {
     height: INPUT_HEIGHT,
     width: StyleSheet.hairlineWidth, // Smallest width available on device
-    backgroundColor: '$border',
-  },
+    backgroundColor: '$border'
+  }
 });

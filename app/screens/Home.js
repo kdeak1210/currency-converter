@@ -19,7 +19,7 @@ class Home extends Component {
     console.log('press quote');
   };
 
-  handleTextChange = (text) => {
+  handleTextChange = text => {
     console.log('Text Changed: ', text);
   };
 
