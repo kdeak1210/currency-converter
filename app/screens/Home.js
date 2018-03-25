@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { StatusBar } from 'react-native';
 
 import { Container } from '../components/Container';
+import { Header } from '../components/Header';
 import { Logo } from '../components/Logo';
 import { InputWithButton } from '../components/TextInput';
 import { ClearButton } from '../components/Buttons';
@@ -31,10 +32,15 @@ class Home extends Component {
     console.log('Swap Currency');
   };
 
+  handleOptionsPress = () => {
+    console.log('Handle Options Press');
+  };
+
   render() {
     return (
       <Container>
         <StatusBar translucent={false} barStyle="light-content" />
+        <Header onPress={this.handleOptionsPress} />
         <Logo />
         <InputWithButton
           buttonText={TEMP_BASE_CURRENCY}
