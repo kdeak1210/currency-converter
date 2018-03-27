@@ -13,7 +13,6 @@ class CurrencyList extends Component {
   };
 
   handlePress = () => {
-    console.log('Handle Press Currency ListItem');
     // Go back to the previous screen on the stack
     this.props.navigation.goBack(null);
   };

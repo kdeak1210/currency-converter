@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { ScrollView, StatusBar, Platform } from 'react-native';
+import { ScrollView, StatusBar, Platform, Linking } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 import { ListItem, Separator } from '../components/List';
@@ -19,7 +19,8 @@ class Options extends Component {
   };
 
   handlePressSite = () => {
-    console.log('Press Site');
+    // Linking library opens the URL in a new tab (user presses back to return)
+    Linking.openURL('http://fixer.io').catch(() => alert('An error occurred'));
   };
 
   render() {
