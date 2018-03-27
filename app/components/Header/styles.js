@@ -1,5 +1,5 @@
 import EStyleSheet from 'react-native-extended-stylesheet';
-import { StatusBar } from 'react-native';
+// import { StatusBar } from 'react-native';
 
 export default EStyleSheet.create({
   container: {
@@ -10,11 +10,11 @@ export default EStyleSheet.create({
     '@media ios': {
       // On all ios devices, this 20 paddingTop should place below status bar
       paddingTop: 20
-    },
-    '@media android': {
-      // StatusBar.currentHeight is special for Android devices
-      paddingTop: StatusBar.currentHeight
     }
+    // '@media android': {
+    //   // StatusBar.currentHeight is special for Android devices
+    //   paddingTop: StatusBar.currentHeight
+    // }
   },
   button: {
     alignSelf: 'flex-end',
