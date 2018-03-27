@@ -1,12 +1,9 @@
 import React from 'react';
 import EStyleSheet from 'react-native-extended-stylesheet';
-
-// import Home from './screens/Home';
-// import CurrencyList from './screens/CurrencyList';
-// import Options from './screens/Options';
-// import Themes from './screens/Themes';
+import { Provider } from 'react-redux';
 
 import Navigator from './config/routes';
+import store from './config/store';
 import { AlertProvider } from './components/Alert';
 
 EStyleSheet.build({
@@ -25,7 +22,9 @@ EStyleSheet.build({
 });
 
 export default () => (
-  <AlertProvider>
-    <Navigator />
-  </AlertProvider>
+  <Provider store={store.configure()}>
+    <AlertProvider>
+      <Navigator />
+    </AlertProvider>
+  </Provider>
 );
