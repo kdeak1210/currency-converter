@@ -1,13 +1,16 @@
 import { createStore, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
+import createSagaMiddleware from 'redux-saga';
 
 import rootReducer from '../reducers';
+import rootSaga from './sagas';
 
 let store;
 
-const middleware = [];
+const sagaMiddleware = createSagaMiddleware();
+const middleware = [sagaMiddleware];
 if (process.env.NODE_ENV === 'development') {
-  middleware.push(logger);
+  middleware.push(logger); // logger should always be last pushed (listen to all)
 }
 
 export default {
@@ -19,10 +22,11 @@ export default {
         preloadedState,
         applyMiddleware(...middleware)
       );
-      return store;
+    } else {
+      store = createStore(rootReducer, applyMiddleware(...middleware));
     }
 
-    store = createStore(rootReducer, applyMiddleware(...middleware));
+    sagaMiddleware.run(rootSaga);
     return store;
   },
 
